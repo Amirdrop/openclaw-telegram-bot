@@ -1,0 +1,12 @@
+services:
+  openclaw:
+    image: ghcr.io/openclaw/openclaw:latest
+    container_name: openclaw
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./data:/app/.openclaw
+    env_file:
+      - .env
+    environment:
+      - TZ=Asia/Jakarta
